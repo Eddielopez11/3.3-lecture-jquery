@@ -1,15 +1,32 @@
+//  Notes on names of rendering engines
+// -webkit-
+//   "Blink" - Google
+//   - Chrome
+//   "Webkit" - Apple
+//   - Safari
+//
+// "Gecko" - Mozilla Foundation
+// -moz
+//   - firefox
+//
+// "Spartan" - Microsoft
+// -ie
+
+
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function(){
+  var $bodyElement = $("[data-js=body]");
+
   // $ or jQuery are references to the "factory"
   // var headingElement = document.querySelector(".heading");
-  var $headingElement = $(".heading");
+  var $headingElement = $bodyElement.find(".heading");
   // Anything inside of jquery factory calls
   //  are CSS selectors
   // Square brackets as
-  var $moviesElement = $("[data-js='movies']");
-  var $submitElement = $("[data-js='form--submit']");
-  var $titleInputElement = $("[data-js='form__title']");
+  var $moviesElement = $bodyElement.find("[data-js='movies']");
+  var $submitElement = $bodyElement.find("[data-js='form--submit']");
+  var $titleInputElement = $bodyElement.find("[data-js='form__title']");
 
   // use reference to document to listen for click
   $submitElement.on("click", function(e){
