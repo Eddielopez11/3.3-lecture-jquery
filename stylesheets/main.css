@@ -1,0 +1,9 @@
+/* Main CSS file */
+* {
+  box-sizing: border-box;
+}
+
+.clicked {
+  color: red;
+  font-weight: 800;
+}
